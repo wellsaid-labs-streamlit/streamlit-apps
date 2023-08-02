@@ -2,15 +2,6 @@
 
 Usage:
     $ PYTHONPATH=. streamlit run apps/internal_test.py --runner.magicEnabled=false
-
-
-              .st-cs {
-            background-color: #38ef7d ;
-          }
-
-          .st-d9 {
-            background-color: #38ef7d ;
-          }
 """
 import io
 import os
@@ -45,7 +36,6 @@ def format_survey_style():
             [role=radiogroup] label:has(input[type="radio"]:checked) div:first-of-type {
                 background-color: #38ef7d !important;
             }
-
             [role=radiogroup] label:has(input[type="radio"]:checked) div:first-of-type div{
                 background-color: white !important;
             }
