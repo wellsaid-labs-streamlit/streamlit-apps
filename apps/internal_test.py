@@ -87,7 +87,6 @@ def update_results():
 def main():
     try:
         audio_csv = conn.read(gcs_csv_path, input_format="csv")
-        print(len(audio_csv))
 
     except NameError:
         print("Audio CSV file not found")
@@ -128,8 +127,8 @@ def main():
                     all_audio_ids = range(len(audio_csv))
                     audio_subset = random.choices(all_audio_ids, k=num_audio)
             
-                tab_names = [str(tab_num + 1) for tab_num in range(num_audio)]
-                tabs = st.tabs(tab_names)
+                    tab_names = [str(tab_num + 1) for tab_num in range(num_audio)]
+                    tabs = st.tabs(tab_names)
 
                 for form_audio_id in range(num_audio):
                     with tabs[form_audio_id]:
