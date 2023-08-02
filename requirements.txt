@@ -1,0 +1,4 @@
+pandas==2.0.3
+st_files_connection==0.1.0
+streamlit==1.25.0
+gcsfs==2023.6.0
