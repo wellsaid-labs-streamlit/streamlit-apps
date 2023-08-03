@@ -111,7 +111,6 @@ def main():
             "Pass?",
             "Comments"
         ])
-    container = st.empty()
     if not st.session_state.form_disabled:
         format_survey_style()
         st.title("Internal Testing Survey 🎧")
@@ -123,12 +122,11 @@ def main():
 
         if st.session_state.open_form:
             with st.form("form_audio"):
-                with st.spinner("Pulling together some audio files for you!"):
-                    all_audio_ids = range(len(audio_csv))
-                    audio_subset = random.choices(all_audio_ids, k=num_audio)
-            
-                    tab_names = [str(tab_num + 1) for tab_num in range(num_audio)]
-                    tabs = st.tabs(tab_names)
+                all_audio_ids = range(len(audio_csv))
+                audio_subset = random.choices(all_audio_ids, k=num_audio)
+        
+                tab_names = [str(tab_num + 1) for tab_num in range(num_audio)]
+                tabs = st.tabs(tab_names)
 
                 for form_audio_id in range(num_audio):
                     with tabs[form_audio_id]:
