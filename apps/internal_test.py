@@ -138,10 +138,10 @@ def main():
                         spectrogram_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Spectrogram Model"].item()
                         signal_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Signal Model"].item()
                         formatted_speaker = format_speaker_name(speaker)
-                        st.write(f'<p><span style="color:#38ef7d;font-weight:bold;">Audio:</span> {form_audio_id_adj} &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Speaker:</span> {formatted_speaker}. &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Style:</span> {style} &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Script:</span> "{script}"</p>', unsafe_allow_html=True)
+                        # st.write(f'<p><span style="color:#38ef7d;font-weight:bold;">Audio:</span> {form_audio_id_adj} &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Speaker:</span> {formatted_speaker}. &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Style:</span> {style} &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Script:</span> "{script}"</p>', unsafe_allow_html=True)
                         st.markdown("""---""")
                         col1, col2 = st.columns(2)
                         
