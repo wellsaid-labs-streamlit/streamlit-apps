@@ -140,10 +140,10 @@ def main():
                         spectrogram_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Spectrogram Model"].item()
                         signal_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Signal Model"].item()
                         formatted_speaker = format_speaker_name(speaker)
-                        st.write(f'<p><span style="color:#38ef7d;font-weight:bold;">Audio:</span> {form_audio_id_adj} &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Speaker:</span> {formatted_speaker}. &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Style:</span> {style} &emsp; \
-                                <span style="color:#38ef7d;font-weight:bold;">Script:</span> "{script}"</p>', unsafe_allow_html=True)
+                        # st.write(f'<p><span style="color:#38ef7d;font-weight:bold;">Audio:</span> {form_audio_id_adj} &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Speaker:</span> {formatted_speaker}. &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Style:</span> {style} &emsp; \
+                        #         <span style="color:#38ef7d;font-weight:bold;">Script:</span> "{script}"</p>', unsafe_allow_html=True)
                         st.markdown("""---""")
                         col1, col2 = st.columns(2)
                         
@@ -153,7 +153,7 @@ def main():
                         col1.audio(audio)
                         col2.radio("Would you use this audio in your own work?", ["Yes", "No"], key=f"{form_audio_id_adj}", horizontal=True)
                         st.text_input(label="Additional Comments:", key=f"comments_{form_audio_id_adj}")
-                        st.write(f'<hr style="border-bottom:3px solid #5734cf">', unsafe_allow_html=True)
+                        # st.write(f'<hr style="border-bottom:3px solid #5734cf">', unsafe_allow_html=True)
                         row = pd.Series({
                             "Email": st.session_state.form_email_input,
                             "Audio ID": org_audio_id,
@@ -168,7 +168,7 @@ def main():
                         })
                         st.session_state.user_response = pd.concat([st.session_state.user_response, row.to_frame().T], ignore_index=True)
 
-                st.write("Make sure to double check your answers before submitting - you can only submit once.")
+                # st.write("Make sure to double check your answers before submitting - you can only submit once.")
                 st.form_submit_button(
                     "Submit your results!",
                     on_click = update_results,
