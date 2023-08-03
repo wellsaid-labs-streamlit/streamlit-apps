@@ -45,8 +45,9 @@ def format_survey_style():
             label div p {
                 font-weight: bold;
             }
-
-
+            div[data-testid="stJson"] {
+                display: none;
+            }
           </style>
         """,
         unsafe_allow_html=True)
