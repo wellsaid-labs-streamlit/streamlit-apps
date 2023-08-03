@@ -46,9 +46,7 @@ def format_survey_style():
                 font-weight: bold;
             }
 
-            div[data-testid="stJson"] {
-                display: none;
-            }
+
           </style>
         """,
         unsafe_allow_html=True)
