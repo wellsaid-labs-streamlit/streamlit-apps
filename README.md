@@ -6,7 +6,7 @@ Assumption: your local machine has been set up using the Install System Dependen
 Using `git clone` the repository onto your system:
 
 ```zsh
-git clone wellsaid-labs-streamlit/streamlit-apps.git
+git clone https://github.com/wellsaid-labs-streamlit/streamlit-apps.git
 ```
 
 ## 2. Install Python Dependencies
