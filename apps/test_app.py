@@ -1,3 +1,9 @@
+""" A workbook to generating a test app.
+
+Usage:
+    $ PYTHONPATH=. streamlit run apps/test_app.py --runner.magicEnabled=false
+"""
+
 import streamlit as st
 
 def main():
