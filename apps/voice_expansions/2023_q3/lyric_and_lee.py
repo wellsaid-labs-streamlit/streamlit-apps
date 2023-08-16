@@ -67,7 +67,7 @@ def load_subset():
         return
 
     all_audio_ids = range(len(audio_csv))
-    audio_subset = random.choices(all_audio_ids, k=num_audio)
+    audio_subset = random.sample(all_audio_ids, k=num_audio)
     return audio_csv, audio_subset
 
 
