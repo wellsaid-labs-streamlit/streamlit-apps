@@ -1,7 +1,7 @@
 """ A workbook to generating an internal testing survey.
 
 Usage:
-    $ PYTHONPATH=. streamlit run apps/internal_test.py --runner.magicEnabled=false
+    $ PYTHONPATH=. streamlit run apps/voice_expansions/2023_q3/lyric_and_lee.py --runner.magicEnabled=false
 """
 import io
 import os
@@ -12,10 +12,10 @@ import streamlit as st
 from st_files_connection import FilesConnection
 
 
-num_audio = 20
-gcs_audio_path = "wellsaid_labs_streamlit_data/test/test_audio"
-gcs_csv_path = "wellsaid_labs_streamlit_data/test/test.csv"
-gcs_responses_path = "wellsaid_labs_streamlit_data/test/test_responses"
+num_audio = 40
+gcs_audio_path = "wellsaid_labs_streamlit_data/voice_expansions/2023_q3/lyric_and_lee/audio"
+gcs_csv_path = "wellsaid_labs_streamlit_data/voice_expansions/2023_q3/lyric_and_lee/metadata.csv"
+gcs_responses_path = "wellsaid_labs_streamlit_data/voice_expansions/2023_q3/lyric_and_lee/responses"
 conn = st.experimental_connection('gcs', type=FilesConnection)
 
 instructions = "Thank you so much for volunteering to test out these new styles and voices - we are \
@@ -115,7 +115,7 @@ def load_data():
         formatted_speaker = format_speaker_name(speaker)
         style = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Session"].item().split(",")[2]
         script = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Script"].item()
-        spectrogram_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Spectrogram Model"].item()
+        spectrogram_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Spectrogam Model"].item()
         signal_model = audio_csv.loc[audio_csv["Id"] == org_audio_id, "Signal Model"].item()
 
         audio_path = os.path.join(gcs_audio_path, f"{org_audio_id}.wav")
