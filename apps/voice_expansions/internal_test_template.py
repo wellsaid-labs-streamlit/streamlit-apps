@@ -1,7 +1,7 @@
 """ A workbook to generating an internal testing survey.
 
 Usage:
-    $ PYTHONPATH=. streamlit run apps/internal_test.py --runner.magicEnabled=false
+    $ PYTHONPATH=. streamlit run apps/voice_expansions/internal_test_template.py --runner.magicEnabled=false
 """
 import io
 import os
