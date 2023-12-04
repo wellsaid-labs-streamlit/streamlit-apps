@@ -12,7 +12,7 @@ import streamlit as st
 from st_files_connection import FilesConnection
 
 
-num_audio = 200
+num_audio = 10
 
 gcs_audio_path_v11 = "wellsaid_labs_streamlit_data/model_evaluations/v11_1_slurring/v11/audio"
 gcs_audio_path_v11_1 = "wellsaid_labs_streamlit_data/model_evaluations/v11_1_slurring/v11_1/audio"
@@ -37,9 +37,6 @@ def format_survey_style():
                 color: #38ef7d;
             }
             [role=tablist] :is([role=presentation]){
-                background-color: #38ef7d !important;
-            }
-            [role=radiogroup] label:has(input[type="radio"]:checked) div:first-of-type {
                 background-color: #38ef7d !important;
             }
             [role=radiogroup] label:has(input[type="radio"]:checked) div:first-of-type div{
@@ -202,7 +199,7 @@ def main():
                         col1, col2 = st.columns(2)
 
                         col1.audio(st.session_state.user_response.loc[form_audio_id, "Audio"])
-                        col2.radio("Would you use this audio in your own work?", ["Yes", "No"], key=f"{form_audio_id_adj}", horizontal=True, index=None)
+                        col2.radio("Slurring?", ["Yes", "No"], key=f"{form_audio_id_adj}", horizontal=True, index=None)
                         st.text_input(label="Additional Comments:", key=f"comments_{form_audio_id_adj}")
 
                 st.button(
