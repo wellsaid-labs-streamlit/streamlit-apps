@@ -1,4 +1,4 @@
 pandas==2.0.3
 st_files_connection @ git+https://github.com/streamlit/files-connection
-streamlit==1.25.0
+streamlit==1.27.0
 gcsfs==2023.6.0
