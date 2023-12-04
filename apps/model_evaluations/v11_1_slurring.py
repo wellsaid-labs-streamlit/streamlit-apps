@@ -12,7 +12,7 @@ import streamlit as st
 from st_files_connection import FilesConnection
 
 
-num_audio = 10
+num_audio = 200
 
 gcs_audio_path_v11 = "wellsaid_labs_streamlit_data/model_evaluations/v11_1_slurring/v11/audio"
 gcs_audio_path_v11_1 = "wellsaid_labs_streamlit_data/model_evaluations/v11_1_slurring/v11_1/audio"
